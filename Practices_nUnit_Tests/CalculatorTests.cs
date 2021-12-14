@@ -12,6 +12,7 @@ namespace Practices_NUnit_Tests
         {
             Calculator calc = new();
             Assert.IsTrue(calc.Additional(2, 3) == 5);
+            Assert.IsTrue(calc.Additional(int.MaxValue, 1) == -2147483648);
         }
 
         [Test]
@@ -30,7 +31,8 @@ namespace Practices_NUnit_Tests
         }
 
         [Test]
-        public void DivisionTest_NormalCase()
+        public void DivisionTest_NormalCase()           //А как лучше делать: поместить все ассерты в один тестовый метод, 
+                                                        //или сделать несколько методов?
         {
             Calculator calc = new();
             Assert.IsTrue(calc.Division(7, 2) == 3);
